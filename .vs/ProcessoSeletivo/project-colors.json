@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "82a07128-432e-4b16-8267-877e61ec00db": {
+      "ProjectGuid": "82a07128-432e-4b16-8267-877e61ec00db",
+      "DisplayName": "Api",
+      "ColorIndex": 0
+    },
+    "445dec57-b745-409f-8e07-9bd9e01663db": {
+      "ProjectGuid": "445dec57-b745-409f-8e07-9bd9e01663db",
+      "DisplayName": "Api.Tests",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

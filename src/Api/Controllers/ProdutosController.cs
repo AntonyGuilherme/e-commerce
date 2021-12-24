@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Api.Dominio;
+using Api.Infraestrututra.Repositorios;
+using Api.Infraestrututra.Repositorios.RepositorioProduto;
+using Api.Infraestrututra.Repositorios.RepositorioPromocao;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
@@ -6,9 +10,16 @@ namespace Api.Controllers
 	[ApiController]
 	public class ProdutosController : ControllerBase
 	{
+		private readonly IRepositorioDePromocao  _repositorioPromocoes = new RepositorioDePromocao();
+		private readonly IRepositorioDeProduto _repositorioProduto = new RepositorioDeProduto();
+
 		[HttpPut("{idDoProduto}/Promocao/{idDaPromocao}")]
 		public void VincularPromocaoAoProduto(int idDaPromocao, int idDoProduto)
 		{
+			Promocao promocao = _repositorioPromocoes.Buscar(idDaPromocao);
+			Produto produto = _repositorioProduto.Buscar(idDoProduto);
+
+			produto.AlterarPromocao(promocao);
 		}
 	}
 }
